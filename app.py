@@ -30,3 +30,7 @@ if uploaded_file is not None:
         st.success(f"Calorie Estimate: {calorie_estimate}")
     except Exception as e:
         st.error(f"Error: {e}")
+
+# Add credits at the bottom
+st.markdown("---")
+st.markdown("gurmeher 2025")
