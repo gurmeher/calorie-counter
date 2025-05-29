@@ -18,7 +18,12 @@ if uploaded_file is not None:
     try:
         # Load the image
         img = Image.open(uploaded_file)
-        st.image(img, caption="Uploaded Image", use_container_width=True)  # Updated parameter
+
+        # Resize the image to make it smaller
+        img = img.resize((300, 300))  # Resize to 300x300 pixels
+
+        # Display the resized image
+        st.image(img, caption="Uploaded Image (Resized)", use_container_width=True)
 
         # Automatically estimate calories after image upload
         calorie_estimate = estimate_calories(prompt, img)
